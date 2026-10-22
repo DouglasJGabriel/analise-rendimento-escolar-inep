@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: inep_raw
+    database: gen-lang-client-0009706893 # O ID do seu projeto no Google Cloud
+    dataset: inep_raw                  # O dataset onde você subiu o CSV
+    tables:
+      - name: raw_taxas_rendimento
