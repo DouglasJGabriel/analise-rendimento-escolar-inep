@@ -11,13 +11,13 @@ filtered as (
 
 renamed as (
     select
-        -- 1. Dimensões / Identificadores Gerais
+        -- Dimensões Gerais
         cast(string_field_0 as int64) as ano_censo,
         string_field_1 as unidade_geografica,
         string_field_2 as localizacao,
         string_field_3 as dependencia_administrativa,
 
-        -- 2. Bloco: Taxa de Aprovação
+        -- Bloco: Taxa de Aprovação
         nullif(string_field_4, '--') as aprovacao_fund_total,
         nullif(string_field_5, '--') as aprovacao_fund_anos_iniciais,
         nullif(string_field_6, '--') as aprovacao_fund_anos_finais,
@@ -37,7 +37,7 @@ renamed as (
         nullif(string_field_20, '--') as aprovacao_med_4_serie,
         nullif(string_field_21, '--') as aprovacao_med_nao_seriado,
 
-        -- 3. Bloco: Taxa de Reprovação
+        -- Bloco: Taxa de Reprovação
         nullif(string_field_22, '--') as reprovacao_fund_total,
         nullif(string_field_23, '--') as reprovacao_fund_anos_iniciais,
         nullif(string_field_24, '--') as reprovacao_fund_anos_finais,
@@ -57,7 +57,7 @@ renamed as (
         nullif(string_field_38, '--') as reprovacao_med_4_serie,
         nullif(string_field_39, '--') as reprovacao_med_nao_seriado,
 
-        -- 4. Bloco: Taxa de Abandono
+        -- Bloco: Taxa de Abandono
         nullif(string_field_40, '--') as abandono_fund_total,
         nullif(string_field_41, '--') as abandono_fund_anos_iniciais,
         nullif(string_field_42, '--') as abandono_fund_anos_finais,

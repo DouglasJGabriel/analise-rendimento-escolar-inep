@@ -4,10 +4,8 @@ with staging as (
 
 unpivoted as (
     
-    -- ==========================================
-    -- 1. ENSINO FUNDAMENTAL - ANOS INICIAIS E FINAIS
-    -- ==========================================
-    
+    -- Ensino fundamental - anos iniciais e finais
+
     -- Aprovação
     select ano_censo, unidade_geografica, localizacao, dependencia_administrativa, 'Aprovação' as tipo_taxa, 'Ensino Fundamental - Total' as etapa_ensino, cast(replace(aprovacao_fund_total, ',', '.') as numeric) as valor_taxa from staging where aprovacao_fund_total is not null
     union all
@@ -74,11 +72,9 @@ unpivoted as (
     select ano_censo, unidade_geografica, localizacao, dependencia_administrativa, 'Abandono' as tipo_taxa, 'Ensino Fundamental - 9º Ano' as etapa_ensino, cast(replace(abandono_fund_9_ano, ',', '.') as numeric) as valor_taxa from staging where abandono_fund_9_ano is not null
 
 
-    -- ==========================================
-    -- 2. ENSINO MÉDIO - SÉRIES
-    -- ==========================================
+    --Ensino médio - séries
     
-    -- Aprovação
+    -- Aprovação (médio)
     union all
     select ano_censo, unidade_geografica, localizacao, dependencia_administrativa, 'Aprovação' as tipo_taxa, 'Ensino Médio - Total' as etapa_ensino, cast(replace(aprovacao_med_total, ',', '.') as numeric) as valor_taxa from staging where aprovacao_med_total is not null
     union all
