@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 dbt_packages/
 dbt_internal_packages/
 logs/
 target/
 .env
-=======
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -226,4 +224,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 data/
->>>>>>> 34713dabb70a78c2892c773cf0b1668be56540a1
+
+credentials.json
